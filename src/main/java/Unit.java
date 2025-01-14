@@ -8,7 +8,6 @@ public abstract class Unit {
     private int health;
     private int position = 0;
 
-    private static final String[] leftRight = {"왼쪽", "오른쪽"};
 
     public Unit(String name, int health, int attackPower, int speed, String description) {
         this.name = name;
@@ -22,14 +21,9 @@ public abstract class Unit {
         System.out.println(name+"| 체력: "+health+" | 공격력: "+attackPower+" | 설명: "+description);
     }
 
-    public void move() {
-        Random random = new Random();
-        int distance = random.nextInt(10) + 1;
-        for (int j = 0; j < distance; j++) {
-            String direction = leftRight[random.nextInt(leftRight.length)];
-            System.out.println(name+"이(가) "+direction+"으로 이동했습니다.");
-            setPosition(direction);
-        }
+    public void move(String direction) {
+        System.out.println(name+"이(가) "+direction+"으로 이동했습니다.");
+        setPosition(direction);
     }
 
     private void setPosition(String direction) {

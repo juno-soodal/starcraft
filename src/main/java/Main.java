@@ -8,6 +8,9 @@ public class Main {
         Unit zealot = new Marine("Zealot", 30, 8,2,"Protoss Unit");
         Unit zergling = new Marine("Zergling", 15, 5,5,"Zerg Unit");
 
+        String[] leftRight = {"왼쪽", "오른쪽"};
+
+
 
         List<Unit> units=new ArrayList<>();
         units.add(marine);
@@ -20,7 +23,10 @@ public class Main {
         int targetIdx = random.nextInt(units.size());
         Unit target = units.get(targetIdx);
         while (true) {
-            unit.move();
+            int distance = random.nextInt(20) + 1;
+            for (int i = 0; i < distance; i++) {
+                unit.move(leftRight[random.nextInt(leftRight.length)]);
+            }
             unit.getCurrentPostion();
             unit.attack(target);
         }
