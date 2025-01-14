@@ -36,7 +36,7 @@ public abstract class Unit {
         }
         System.out.println(name+"이가 "+target.name+"이를 공격합니다!");
         target.takeDamage(attackPower);
-        if (target.health < 0) {
+        if (target.health == 0) {
             System.out.println(target.name+"이(가) 사망했습니다.");
             return;
         }
