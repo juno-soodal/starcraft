@@ -6,7 +6,7 @@ public abstract class Unit {
     private final int speed;
     private final String description;
     private int health;
-    private int position = 0;
+    private int position;
 
 
     public Unit(String name, int health, int attackPower, int speed, String description) {
