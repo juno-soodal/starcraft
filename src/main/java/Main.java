@@ -16,6 +16,9 @@ public class Main {
         units.add(marine);
         units.add(zealot);
         units.add(zergling);
+        for (Unit unit : units) {
+            unit.printInfo();
+        }
         Random random = new Random();
         int unitIdx = random.nextInt(units.size());
         Unit unit = units.get(unitIdx);
