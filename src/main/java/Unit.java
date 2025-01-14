@@ -46,7 +46,10 @@ public abstract class Unit {
     }
 
     public void takeDamage(int amount) {
-        this.health -= amount;
+        health -= amount;
+        if (health < 0) {
+            health = 0;
+        }
     }
 
     public void getCurrentPostion() {

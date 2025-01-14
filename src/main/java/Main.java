@@ -31,7 +31,13 @@ public class Main {
                 unit.move(leftRight[random.nextInt(leftRight.length)]);
             }
             unit.getCurrentPostion();
-            unit.attack(target);
+            try {
+                unit.attack(target);
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+                System.out.println("프로그램을 종료합니다.");
+                return;
+            }
         }
 
     }
